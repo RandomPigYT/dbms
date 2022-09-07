@@ -1,6 +1,13 @@
+#include "../include/PigSQL.h"
 #include <stdio.h>
 
 int main (void){
 
-  printf("PigSQL!\n");
+  char** lol = NULL;
+  splitStr("Sup", lol);
+
+  printf("%s\n", *lol);
+
+
+  
 }
