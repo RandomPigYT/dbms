@@ -2,17 +2,12 @@
 #define PIGSQL_H
 
 #include "util.h"
-  
-
-enum types{
-  INT,
-  VAR_CHAR,
-  TEXT,
-  LOCAL_ID,
-  FOREIGN_ID
-};
+#include "structs.h"
+#include <stdint.h> 
+#include <stddef.h>
 
 
+// Function declerations
 
 
 #endif
