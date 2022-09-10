@@ -4,9 +4,8 @@
 
 void splitStr(const char* str, char** dest){
   
-  Size s = {.size = 0, .memory = 0};
+  Memory s = {.size = 0, .memory = 0};
   
-  append(dest, str, s, char*);
 
 }
 

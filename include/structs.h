@@ -6,20 +6,15 @@
 #include <stddef.h>
 
 enum types{
+
   INT,
   VAR_CHAR,
   TEXT,
   LOCAL_ID,
   FOREIGN_ID
+
 };
 
-
-typedef struct{
-  
-  char* name;
-  uint8_t type;
-
-} Column;
 
 typedef struct{
   
@@ -30,21 +25,29 @@ typedef struct{
 
 typedef struct{
   
-  Column* Columns;
-  Size colSize;
-  
-  Row* rows;
-  Size rowSize;
+  char* name;
+  uint8_t type;
 
+  Row rows;
+  Memory rowMem;
+
+} Column;
+
+
+
+typedef struct{
+  
+  Column* Columns;
+  Memory colMem;
+  
 } Table;
 
 typedef struct database_t{
 
-  char name[256];
+  char* name;
 
   Table* tables;
-  size_t numTables;
-
+  Memory tableMem;
 
 } Database;
 

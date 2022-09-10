@@ -5,7 +5,7 @@
 #include "structs.h"
 
 
-Database* databases;
-
+extern Database* databases;
+extern Memory DbMem;
 
 #endif

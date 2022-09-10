@@ -9,5 +9,7 @@
 
 // Function declerations
 
+void createDb(const char* name);
+
 
 #endif

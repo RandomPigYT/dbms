@@ -1,13 +1,13 @@
 #include "../include/PigSQL.h"
+#include "../include/globals.h"
 #include <stdio.h>
 
 int main (void){
 
-  char** lol = NULL;
-  splitStr("Sup", lol);
+  createDb("Lol");
 
-  printf("%s\n", *lol);
-
+  printf("%s\n", databases[0].name);
 
   
+  return 0;
 }
