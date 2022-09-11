@@ -53,4 +53,4 @@ dkms.conf
 
 #misc
 tags
-valgLogs/
+valgrind-out.txt
