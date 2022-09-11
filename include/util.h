@@ -30,7 +30,7 @@ typedef struct{
 // splitStr takes a pointer 'numWords' where it stores the number of tokens in
 // the string
 char** splitStr(char* str, char sep, size_t* numWords);
-
+void freeSplitStr(char** ptr, size_t numWords);
 
 
 #endif

@@ -51,3 +51,13 @@ char** splitStr(char* str, char sep, size_t* numWords){
 	return dest;
 } 
 
+
+void freeSplitStr(char** ptr, size_t numWords){
+	
+	for(size_t i = 0; i < numWords; i++){
+
+		free(ptr[i]);
+	}
+	
+	free(ptr);
+}

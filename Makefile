@@ -1,7 +1,7 @@
 CC:=gcc
 LD:=ld
 
-CFLAGS:=-Wall -Wextra -g -std=gnu17
+CFLAGS:=-Wall -Wextra -g -std=gnu17 
 LDFLAGS:=
 
 BIN:=bin
@@ -15,10 +15,11 @@ OBJS:=$(patsubst $(SRC)/%.c, $(OBJ)/%.o, $(SRCS))
 
 DIRS:=$(patsubst $(SRC)/%, $(OBJ)/%, $(shell find $(SRC)/ -mindepth 1 -type d))
 
+CREATE_DIR_COMMAND:=./dirs.sh
 
 .PHONY: all clean dirs
 
-all: $(TARGET)
+all: dirs $(TARGET)
 
 $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $@ $(LDFLAGS)
@@ -27,11 +28,19 @@ $(OBJ)/%.o: $(SRC)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 dirs:
-	-@mkdir $(DIRS)
+	@$(CREATE_DIR_COMMAND) $(DIRS)
 
 clean:
 	-@rm -rf $(OBJ)/*
 	-@rm -rf $(BIN)/*
 
-run:
+run: $(TARGET)
 	@./$(TARGET)
+
+valgrind:
+	@valgrind --leak-check=full \
+         --show-leak-kinds=all \
+         --track-origins=yes \
+         --verbose \
+         --log-file=./valgLogs/valgrind-out.txt \
+         ./$(TARGET)
