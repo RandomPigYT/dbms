@@ -1,7 +1,6 @@
 #!/bin/bash
 
 
-dirs=""
 createdDirs=""
 
 for i in "$@"
