@@ -42,7 +42,7 @@ typedef struct{
   
 } Table;
 
-typedef struct database_t{
+typedef struct{
 
   char* name;
 

@@ -8,4 +8,6 @@
 extern Database* databases;
 extern Memory DbMem;
 
+extern uint64_t currentDb;
+
 #endif

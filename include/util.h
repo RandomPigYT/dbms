@@ -7,13 +7,13 @@
 
 
 #define expandArray(array, mem, type){  \
-  if(mem.size == 0){  \
+  if (mem.size == 0){  \
 \
     array = malloc(10 * sizeof(type));  \
     mem.memory = 10;  \
   } \
 \
-  else if(mem.memory == 0){ \
+  else if (mem.memory == 0){ \
 \
     array = realloc(array, (2 * mem.size) * sizeof(type)); \
 \
@@ -27,8 +27,9 @@ typedef struct{
   size_t memory;
 } Memory;
 
-
-void splitStr(const char* str, char** dest);
+// splitStr takes a pointer 'numWords' where it stores the number of tokens in
+// the string
+char** splitStr(char* str, char sep, size_t* numWords);
 
 
 
