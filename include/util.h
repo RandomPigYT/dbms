@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 
 #define expandArray(array, mem, type){  \
@@ -23,14 +24,22 @@
 
 
 typedef struct{
+	
   size_t size;
   size_t memory;
+
 } Memory;
+
 
 // splitStr takes a pointer 'numWords' where it stores the number of tokens in
 // the string
 char** splitStr(char* str, char sep, size_t* numWords);
 void freeSplitStr(char** ptr, size_t numWords);
 
+void initStack();
+void push(void* item);
+void* pop();
+void destroyStack();
+size_t stackSize();
 
 #endif

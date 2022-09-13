@@ -34,13 +34,13 @@ typedef struct{
 } Column;
 
 
-
 typedef struct{
   
   Column* Columns;
   Memory colMem;
   
 } Table;
+
 
 typedef struct{
 
@@ -50,5 +50,6 @@ typedef struct{
   Memory tableMem;
 
 } Database;
+
 
 #endif

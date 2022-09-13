@@ -6,16 +6,11 @@ int main(void){
 
   createDb("Lol");
 	
-	size_t size = 0;
+	initStack();
 
-	char** w = splitStr("Hello mate, how the hell are you doing?", ' ', &size);
-	
-	for(size_t i = 0; i < size; i++){
-		printf("%s\n", w[i]);
-	}
-  
-	freeSplitStr(w, size);
-	
+	push("Wasssuuuuupppppp");
+
+	printf("%s\n", (char*)pop());
 
   return 0;
 }
