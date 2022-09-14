@@ -16,27 +16,24 @@ enum types{
 };
 
 
-typedef struct{
-  
-  void** fields;
-
-} Row;
-
 
 typedef struct{
   
-  char* name;
+	char* name;
+
   uint8_t type;
-
-  Row rows;
-  Memory rowMem;
+	
+	void** field;
+  Memory fieldsMem;
 
 } Column;
 
 
 typedef struct{
-  
-  Column* Columns;
+	
+	char* name;
+
+  Column* columns;
   Memory colMem;
   
 } Table;

@@ -3,17 +3,13 @@
 
 void createDb(const char* name){
   
-  Database db;
+ 
 
-  db.name = (char*)name;
-  db.tables = NULL;
-  db.tableMem.memory = 0;
-  db.tableMem.size = 0;
+  database.name = (char*)name;
+  database.tables = NULL;
+  database.tableMem.memory = 0;
+  database.tableMem.size = 0;
 
-  expandArray(databases, DbMem, Database);
 
-  databases[DbMem.size] = db;
-  DbMem.size++;
-  DbMem.memory--;
 
 }

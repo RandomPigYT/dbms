@@ -6,11 +6,11 @@ int main(void){
 
   createDb("Lol");
 	
-	initStack();
-
-	push("Wasssuuuuupppppp");
-
-	printf("%s\n", (char*)pop());
+	char* c[3] = {"Hello", "hi", "how"};
+	uint8_t T[3] = {INT, VAR_CHAR, TEXT};
+	
+	createTable("hello", c, T, 3);
+	createTable("hello", c, T, 3);
 
   return 0;
 }
