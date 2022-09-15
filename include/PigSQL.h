@@ -14,5 +14,7 @@ void createDb(const char* name);
 
 void createTable(const char* name, char** columns, uint8_t* types, uint32_t numColumns);
 
+void insertRow(Table* table, void** values);
+
 
 #endif

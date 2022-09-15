@@ -24,7 +24,6 @@ typedef struct{
   uint8_t type;
 	
 	void** field;
-  Memory fieldsMem;
 
 } Column;
 
@@ -35,7 +34,9 @@ typedef struct{
 
   Column* columns;
   Memory colMem;
-  
+		
+  Memory fieldsMem;
+
 } Table;
 
 

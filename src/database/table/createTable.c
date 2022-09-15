@@ -26,8 +26,6 @@ void initColumns(uint32_t numColumns, uint8_t* types){
 		
 		// Initialize column memory record
 		currentTable.columns[i].field = NULL;
-		currentTable.columns[i].fieldsMem.size = 0;
-		currentTable.columns[i].fieldsMem.memory = 0;
 	}
 
 }
@@ -50,6 +48,9 @@ void createTable(const char* name, char** columns, uint8_t* types, uint32_t numC
 	initColumns(numColumns, types);
 	setNames(columns, numColumns);
 	
+	currentTable.fieldsMem.size = 0;
+	currentTable.fieldsMem.memory = 0;
+
 	// Update memory record for tableMem
 	database.tableMem.size++; database.tableMem.memory--;
 

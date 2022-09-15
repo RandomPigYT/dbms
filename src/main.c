@@ -12,5 +12,6 @@ int main(void){
 	createTable("hello", c, T, 3);
 	createTable("hello", c, T, 3);
 
+
   return 0;
 }
